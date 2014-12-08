@@ -1,0 +1,16 @@
+default: &default
+  adapter: mysql2
+  username: 
+  password:  
+
+development:
+  <<: *default
+  database: pigeon_development
+
+test:
+  <<: *default
+  database: pigeon_test
+
+production:
+  <<: *default
+  database: pigeon_production
