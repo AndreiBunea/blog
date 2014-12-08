@@ -16,3 +16,6 @@
 /tmp
 
 database.yml
+.DS_Store
+Thumbs.db
+logger.txt
