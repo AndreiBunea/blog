@@ -21,6 +21,23 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def authenticate
+  end
+
+  def sign_in
+    authorized_user = User.authenticate params[:name], params[:password]
+    if authorized_user
+      session[:user_id] = authorized_user.id
+      redirect_to root_path, notice: "Signed in!"
+    else
+      render :sign_in, notice: "Invalid something!"
+    end
+  end
+
+  def sign_out
+    session[:user_id] = nil
+  end
+
   # POST /users
   # POST /users.json
   def create
