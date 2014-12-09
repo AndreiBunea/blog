@@ -6,6 +6,9 @@ Rails.application.routes.draw do
 
   resources :users do
     get '/sign-up' => 'users#new', on: :collection
+    get '/sign-in' => 'users#authenticate', on: :collection
+    post '/sign-in' => 'users#sign_in', on: :collection
+    get '/sign-out' => 'users#sign_out'
   end
 
   root 'posts#index'
