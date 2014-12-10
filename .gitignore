@@ -19,3 +19,4 @@ database.yml
 .DS_Store
 Thumbs.db
 logger.txt
+schema.rb
