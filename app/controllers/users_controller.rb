@@ -36,6 +36,7 @@ class UsersController < ApplicationController
 
   def sign_out
     session[:user_id] = nil
+    redirect_to root_path
   end
 
   # POST /users

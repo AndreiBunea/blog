@@ -1,5 +1,5 @@
+<h2><%= "Signed in user: #{@current_user.name}" unless @current_user.nil?%></h2>
 <h1>Listing posts</h1>
-
 <table>
   <thead>
     <tr>
@@ -25,3 +25,10 @@
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+<% if @current_user.nil? %>
+  <%= link_to 'Sign in', sign_in_users_path %>
+  <%= link_to 'Sign up', sign_up_users_path %>
+<% else %>
+  <%= link_to 'Sign out', user_sign_out_path(@current_user) %>
+<% end %>
+
